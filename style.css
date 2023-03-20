@@ -36,7 +36,35 @@ body {
 .header {
     background-color: blue;
     grid-area: header;
+
+    display: grid;
+    gap: 5px; /* for visualization */
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "search userAccount"
+        "name headerLinks"
 }
+
+    .header > div {
+        background-color: lightsalmon;
+    }
+
+    .header .search {
+        grid-area: search;
+    }
+
+    .header .userAccount {
+        grid-area: userAccount;
+    }
+
+    .header .name {
+        grid-area: name;
+    }
+
+    .header .headerLinks {
+        grid-area: headerLinks;
+    }
 
 /* main content */
 .main {
