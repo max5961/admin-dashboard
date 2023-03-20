@@ -75,26 +75,28 @@ body {
 .main {
     background-color: var(--mainBG);
     grid-area: main;
-    padding: 10px;
+    padding: 20px;
 
     display: grid;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 25px 1fr 25px 1fr;
     grid-template-areas: 
+        "projectsTitle announcementsTitle"
         "projects announcements"
+        "projects trendingTitle"
         "projects trending";
 }
-    /* main content > children */
-    .main > div {
+
+    .main > *{
         background-color: green;
+        gap: 20px;
     }
 
     .main .projects {
         grid-area: projects;
         
         display: grid;
-        gap: 10px;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
@@ -108,4 +110,20 @@ body {
 
     .main .trending {
         grid-area: trending;
+    }
+
+    .main .title {
+
+    }
+
+    .main .projectsTitle {
+        grid-area: projectsTitle;
+    }
+
+    .main .announcementsTitle {
+        grid-area: announcementsTitle;
+    }
+
+    .main .trendingTitle {
+        grid-area: trendingTitle;
     }
