@@ -23,18 +23,29 @@ body {
         "sidebar main";
 }
 
-/* sidebar */
+/* SIDEBAR ---------------------------------------------------------------------------------------------------SIDEBAR*/
 .sidebar {
     background-color: var(--sidebarBG);
     grid-area: sidebar;
 
     display: grid;
-    gap: 5px; /*for visualization */
-    grid-template: 1fr 3fr 3fr / 1fr;
+    gap: 50px;
+    grid-template: 1fr 3fr 3fr 3fr / 1fr;
 }
 
-    .sidebar .sidebarContent {
+    .sidebar > div {
         background-color: rgb(95, 63, 68);
+    }
+
+    .sidebar .sidebarLogo {
+        display: grid;
+    }
+
+    .sidebar .sidebarLinks,
+    .sidebar .sidebarAdminLinks {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 40px;
     }
 
 /* header */
@@ -71,7 +82,7 @@ body {
         grid-area: headerLinks;
     }
 
-/* main */
+/* MAIN ------------------------------------------------------------------------------------------------------------MAIN*/
 .main {
     background-color: var(--mainBG);
     grid-area: main;
@@ -80,50 +91,73 @@ body {
     display: grid;
     gap: 20px;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 25px 1fr 25px 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-        "projectsTitle announcementsTitle"
         "projects announcements"
-        "projects trendingTitle"
         "projects trending";
 }
-
-    .main > *{
-        background-color: green;
-        gap: 20px;
-    }
-
-    .main .projects {
+    /* main projects ----------------------------------------------------------------------------------------main projects */
+    .projects {
         grid-area: projects;
-        
+        background-color: pink;
+
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
+        grid-template-rows: 25px 1fr;
     }
 
-    .main .projects .project {
+    .projects .projectsTitle {
+        background-color: var(--mainBG) /* temp until layout complete */
+    }
+
+    .projects .projectsContent {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+
+    }
+
+    .announcements {
+        grid-area: announcements;
+        background-color: yellow;
+    }
+
+    .trending {
+        grid-area: trending;
         background-color: lightgreen;
     }
 
-    .main .announcements {
-        grid-area: announcements;
+    /* main announcements -------------------------------------------------------------------------------------main announcements */
+    .announcements {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25px 1fr;
     }
 
+    .announcements .announcementsTitle {
+        background-color: var(--mainBG) /* temp until layout complete */
+
+    }
+
+    .announcementsContent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+    }
+
+    /* main trending --------------------------------------------------------------------------------------------main trending */
     .main .trending {
-        grid-area: trending;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25px 1fr;
     }
 
-    .main .title {
-
+    .trending .trendingTitle {
+        background-color: var(--mainBG) /* temp until layout complete */;
     }
 
-    .main .projectsTitle {
-        grid-area: projectsTitle;
-    }
-
-    .main .announcementsTitle {
-        grid-area: announcementsTitle;
-    }
-
-    .main .trendingTitle {
-        grid-area: trendingTitle;
+    .trending .trendingContent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
     }
