@@ -75,6 +75,7 @@ body {
 .main {
     background-color: var(--mainBG);
     grid-area: main;
+    padding: 10px;
 
     display: grid;
     gap: 10px;
@@ -86,11 +87,19 @@ body {
 }
     /* main content > children */
     .main > div {
-        background-color: var(--contentBG)
+        background-color: green;
     }
 
     .main .projects {
         grid-area: projects;
+        
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .main .projects .project {
+        background-color: lightgreen;
     }
 
     .main .announcements {
