@@ -9,6 +9,7 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0;
+    background-color: red;
 }
 
 /* gridContainer */
@@ -17,11 +18,33 @@ body {
     width: 100%;
 
     display: grid;
-    grid-template-rows: 150px 1fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-rows: minmax(150px, 1fr) 5fr;
+    grid-template-columns: 2fr 6fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
+}
+
+@media only screen and (max-width: 495px){
+    body {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        background-color: red;
+    }
+    
+    /* gridContainer */
+    .gridContainer {
+        height: auto;
+        width: 100%;
+    
+        display: grid;
+        grid-template-rows: minmax(150px, 1fr) 7fr;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "sidebar header"
+            "sidebar main";
+    }
 }
 
 /* SIDEBAR ---------------------------------------------------------------------------------------------------SIDEBAR*/
