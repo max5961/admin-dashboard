@@ -97,6 +97,7 @@ body {
         background-color: lightsalmon;
     }
 
+    /* HEADER search----------------------------------------------------------------------------------HEADER search */
     .header .search {
         grid-area: search;
         display: grid;
@@ -123,9 +124,39 @@ body {
         grid-area: userAccount;
     }
 
-    .header .name {
-        grid-area: name;
-    }
+        /* HEADER name--------------------------------------------------------------------------------------HEADER name */
+        .header .name {
+            grid-area: name;
+
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 50px 90%;
+            grid-template-rows: 80%;
+            align-content: center;
+            justify-content: start;
+            align-items: center;
+
+            padding-left: 5%;
+        }
+
+        .header .userMessageContainer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+        }
+
+            .userMessageContainer .userMessage {
+                font-size: 1.25rem;
+            }
+
+            .userMessageContainer .userName {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+
+        .header img.nameLogo {
+            height: 50px;
+        }
 
     .header .headerLinks {
         grid-area: headerLinks;
