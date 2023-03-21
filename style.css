@@ -1,7 +1,8 @@
 :root {
     --mainBG: lightblue;
     --sidebarBG: rgb(75, 75, 255);
-    --contentBG: rgb(224, 205, 205);
+    --eachProjectBG: rgb(193, 255, 255);
+    --eachProjectTrim: rgb(0, 189, 196);
 }
 
 body {
@@ -179,8 +180,6 @@ body {
     /* MAIN projects ----------------------------------------------------------------------------------------MAIN projects */
     .projects {
         grid-area: projects;
-        background-color: pink;
-
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 25px 1fr;
@@ -197,18 +196,26 @@ body {
 
     }
 
-    .announcements {
-        grid-area: announcements;
-        background-color: yellow;
+    .projects .eachProject {
+        background-color: var(--eachProjectBG);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 4px 4px 4px black;
+
+        display: grid;
+        grid-template-columns: 1fr 20fr;
     }
 
-    .trending {
-        grid-area: trending;
-        background-color: lightgreen;
+    .eachProject .pLeft {
+        background-color: var(--eachProjectTrim);
+      
     }
 
     /* MAIN announcements -------------------------------------------------------------------------------------MAIN announcements */
-    .announcements {
+    .main .announcements {
+        grid-area: announcements;
+        background-color: yellow;
+
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 25px 1fr;
@@ -227,6 +234,9 @@ body {
 
     /* MAIN trending --------------------------------------------------------------------------------------------MAIN trending */
     .main .trending {
+        grid-area: trending;
+        background-color: lightgreen;
+
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 25px 1fr;
