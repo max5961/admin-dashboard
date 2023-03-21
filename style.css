@@ -37,18 +37,49 @@ body {
         background-color: rgb(95, 63, 68);
     }
 
-    .sidebar .sidebarLogo {
+    .sidebar .sidebarLogoContainer {
         display: grid;
+        grid-template-columns: 80%;
+        justify-content: center;
+        justify-items: start;
+        align-items: center;
     }
 
     .sidebar .sidebarLinks,
     .sidebar .sidebarAdminLinks {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 80%;
         grid-auto-rows: 40px;
+        justify-content: center;
+        justify-items: stretch;
+        align-items: center;
     }
 
-/* header */
+    img.sidebarLogo {
+        height: 40px;
+    }
+
+        .eachLink {
+            height: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 2rem;
+
+            display: grid;
+            gap: 5px;
+            grid-template-columns: 20px 1fr;
+            align-items: center;
+        }
+
+        .eachLink img {
+            height: 20px;
+        }
+
+        .eachLink:hover {
+            background-color: white;
+        }
+
+/* HEADER---------------------------------------------------------------------------------------------------HEADER */
 .header {
     background-color: var(--headerBG);
     grid-area: header;
@@ -68,7 +99,25 @@ body {
 
     .header .search {
         grid-area: search;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 20px 80%;
+        grid-template-rows: 70%;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
+
+        .searchLogo {
+            height: 20px;
+        }
+        
+        input[type="search"] {
+            height: 75%;
+            border-radius: 2rem;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
 
     .header .userAccount {
         grid-area: userAccount;
@@ -96,7 +145,7 @@ body {
         "projects announcements"
         "projects trending";
 }
-    /* main projects ----------------------------------------------------------------------------------------main projects */
+    /* MAIN projects ----------------------------------------------------------------------------------------MAIN projects */
     .projects {
         grid-area: projects;
         background-color: pink;
@@ -127,7 +176,7 @@ body {
         background-color: lightgreen;
     }
 
-    /* main announcements -------------------------------------------------------------------------------------main announcements */
+    /* MAIN announcements -------------------------------------------------------------------------------------MAIN announcements */
     .announcements {
         display: grid;
         grid-template-columns: 1fr;
@@ -145,7 +194,7 @@ body {
         grid-auto-rows: 1fr;
     }
 
-    /* main trending --------------------------------------------------------------------------------------------main trending */
+    /* MAIN trending --------------------------------------------------------------------------------------------MAIN trending */
     .main .trending {
         display: grid;
         grid-template-columns: 1fr;
