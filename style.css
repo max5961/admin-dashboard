@@ -13,8 +13,6 @@
 
     --headerBG: #5CAB7D;
     --headerFont: #082206;
-    
-    
 }
 
 * {
@@ -168,6 +166,18 @@ body {
 
     .header .userAccount {
         grid-area: userAccount;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr;
+        align-items: center;
+        justify-items: center;
+        min-width: 200px;
+        max-width: 70%;
+    }
+
+    .userAccount .notifications,
+    .userAccount .topRightProfilePicture {
+        width: 20px;
     }
 
         /* HEADER name--------------------------------------------------------------------------------------HEADER name */
