@@ -1,8 +1,24 @@
 :root {
-    --mainBG: lightblue;
-    --sidebarBG: rgb(75, 75, 255);
-    --eachProjectBG: rgb(193, 255, 255);
-    --eachProjectTrim: rgb(0, 189, 196);
+    --mainBG: #9cfde0;
+
+    --sidebarBG: #44633f;
+    --sidebarFont: rgb(214, 214, 214);
+    --sidebarHover: #181d16;
+
+    --eachProjectBG: #5CAB7D;
+    --eachProjectTrim: #3F4B3B;
+
+    --announcementsBG: #5CAB7D;
+    --trendingBG: #5CAB7D;
+
+    --headerBG: #5CAB7D;
+    --headerFont: #082206;
+    
+    
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -19,7 +35,7 @@ body {
 
     display: grid;
     grid-template-rows: minmax(150px, 1fr) 5fr;
-    grid-template-columns: 2fr 6fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -39,7 +55,7 @@ body {
         width: 100%;
     
         display: grid;
-        grid-template-rows: minmax(150px, 1fr) 7fr;
+        grid-template-rows: minmax(150px, 1fr) 7.25fr;
         grid-template-columns: 1fr 2fr;
         grid-template-areas: 
             "sidebar header"
@@ -50,7 +66,10 @@ body {
 /* SIDEBAR ---------------------------------------------------------------------------------------------------SIDEBAR*/
 .sidebar {
     background-color: var(--sidebarBG);
+    color: var(--sidebarFont);
+    font-size: 1.5rem;
     grid-area: sidebar;
+    min-width: 192px;
 
     display: grid;
     gap: 50px;
@@ -58,7 +77,7 @@ body {
 }
 
     .sidebar > div {
-        background-color: rgb(95, 63, 68);
+        
     }
 
     .sidebar .sidebarLogoContainer {
@@ -100,12 +119,15 @@ body {
         }
 
         .eachLink:hover {
-            background-color: white;
+            background-color: var(--sidebarHover);
         }
 
 /* HEADER---------------------------------------------------------------------------------------------------HEADER */
 .header {
     background-color: var(--headerBG);
+    color: var(--headerFont);
+    box-shadow: 4px 4px 4px black;
+
     grid-area: header;
 
     display: grid;
@@ -118,7 +140,7 @@ body {
 }
 
     .header > div {
-        background-color: lightsalmon;
+        background-color: var(--individualHeaderBG)
     }
 
     /* HEADER search----------------------------------------------------------------------------------HEADER search */
@@ -237,7 +259,7 @@ body {
     /* MAIN announcements -------------------------------------------------------------------------------------MAIN announcements */
     .main .announcements {
         grid-area: announcements;
-        background-color: yellow;
+        background-color: var(--announcementsBG);
 
         display: grid;
         grid-template-columns: 1fr;
@@ -258,7 +280,7 @@ body {
     /* MAIN trending --------------------------------------------------------------------------------------------MAIN trending */
     .main .trending {
         grid-area: trending;
-        background-color: lightgreen;
+        background-color: var(--trendingBG);
 
         display: grid;
         grid-template-columns: 1fr;
